@@ -11,8 +11,13 @@ The POD method is used to reduce the dimensionality of a dataset.
 import numpy as np
 import matplotlib.pyplot as plt
 
-def z(x, t):
+def z1(x, t):
     return np.exp(-np.abs((x - 0.5)*(t - 1))) + np.sin(x*t)
+
+EPS = 0.1
+
+def z(x, t):
+    return np.sin(1/(x+t+EPS))
 
 class POD:
     """
