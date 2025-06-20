@@ -5,7 +5,7 @@ This script is a numerical example of the POD method.
 The POD method is used to reduce the dimensionality of a dataset.
 
 @Author: Miquel Baztán
-@Date: 17/07/2025
+@Date: 17/06/2025-18/06/2025
 """
 
 import numpy as np
@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 def z1(x, t):
     return np.exp(-np.abs((x - 0.5)*(t - 1))) + np.sin(x*t)
 
-EPS = 0.1
+EPS = 0.01
 
 def z(x, t):
     return np.sin(1/(x+t+EPS))
@@ -128,9 +128,6 @@ class POD:
         plt.ylabel("Error")
         plt.title("Relative error of the aproximation", fontsize=16, fontweight="bold")
         plt.show()
-
-
-        
 
 def main():
     p = POD(z, [0, 1], [0,2], 25, 50)
